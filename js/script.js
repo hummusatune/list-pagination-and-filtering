@@ -52,8 +52,18 @@ FSJS project 2 - List Filter and Pagination
 document.addEventListener('DOMContentLoaded', () => {
 // First gather important elements from the DOM and store them
     const students = document.getElementsByClassName('student-item');
-    
-    for (let i = 20; i < students.length; i ++) {
+    const mainPageDiv = document.querySelector('.page');
+    const div = document.createElement('div');
+    const ul = document.createElement('ul');
+    const li = document.createElement('li');
+
+    for (let i = 50; i < students.length; i ++) {
         students[i].style.display = "none";
     }
+
+    li.textContent = '1';
+    ul.appendChild(li)
+    div.className = 'pagination';
+    div.appendChild(ul);
+    mainPageDiv.appendChild(div);
 });
